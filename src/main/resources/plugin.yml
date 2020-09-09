@@ -1,0 +1,11 @@
+name: Sand
+version: @version@
+main: xyz.n7mn.dev.neta.sand.sand.Sand
+api-version: 1.16
+authors: [ n3m_ ]
+description: Sand
+website: https://n7mn.xyz/
+commands:
+  sand:
+    description: 'sand'
+    usage: '/sand'
