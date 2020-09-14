@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.Random;
+import java.util.UUID;
 
 public class SandCommand implements CommandExecutor {
     @Override
@@ -15,15 +16,17 @@ public class SandCommand implements CommandExecutor {
 
         if (sender instanceof Player){
             Player player = (Player) sender;
+            ItemStack itemStack = new ItemStack(Material.SAND);
 
-            int i = new Random().nextInt(18);
-            if (i == 8 || i == 11){
-                ItemStack itemStack = new ItemStack(Material.GRAVEL);
-                player.getInventory().addItem(itemStack);
+            if (player.getUniqueId().equals(UUID.fromString("1865ab8c-700b-478b-9b52-a8c58739df1a"))){
+                itemStack = new ItemStack(Material.SAND, 64);
+                for (int i = 0; i < player.getInventory().getSize(); i++){
+                    player.getInventory().addItem(itemStack);
+                }
             } else {
-                ItemStack itemStack = new ItemStack(Material.SAND);
                 player.getInventory().addItem(itemStack);
             }
+
         }
 
         return true;
