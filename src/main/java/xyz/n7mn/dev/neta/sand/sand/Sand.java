@@ -8,6 +8,8 @@ public final class Sand extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         getCommand("sand").setExecutor(new SandCommand());
+
+        getServer().getPluginManager().registerEvents(new SandListener(), this);
     }
 
     @Override
